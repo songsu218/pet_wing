@@ -1,0 +1,155 @@
+/** @format */
+
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root {
+  background-color: white;
+}
+
+.wrap {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.wrap > * {
+  max-width: 1200px;
+  width: calc(100% - 1rem);
+  margin: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #999;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.searchArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border: 1px solid #999;
+  border-radius: 0.8rem;
+  width: 25%;
+}
+
+.searchArea input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.searchArea i {
+  cursor: pointer;
+}
+
+main {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #999;
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab ul {
+  display: inline-block;
+  text-align: center;
+  margin: 40px auto;
+  border: 1px solid #999;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tab ul li {
+  float: left;
+}
+
+.tab ul li.active span {
+  background-color: #594a41;
+  color: white;
+}
+
+.tab ul li span {
+  display: inline-block;
+  font-size: 1.5rem;
+  line-height: 3.5rem;
+  height: 58px;
+  padding: 0 36px;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.listCon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 1rem;
+}
+
+.listCon li {
+  border: 1px solid #999;
+  border-radius: 1rem;
+  padding: 1rem;
+  position: relative;
+  font-size: 1.5rem;
+}
+
+.petImg {
+  height: 300px;
+  border-radius: 1rem;
+}
+
+.petImg img {
+  width: 100%;
+  height: 100%;
+}
+
+.listCon .petName {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listCon .petDate {
+  width: 80%;
+  display: inline-block;
+  font-size: 0.8em;
+}
+
+.listCon .petState {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  background-color: #594a41;
+  color: white;
+  font-size: 0.8em;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  text-align: center;
+  padding: 14px 4px 5px 5px;
+  border-top-right-radius: 0;
+  line-height: 120%;
+}
+
+.listCon .petState.on {
+  display: block;
+}
