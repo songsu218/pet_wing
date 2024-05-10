@@ -16,7 +16,7 @@ var swiper = new Swiper('.videoArea', {
 
 // 두개의 API를 활용하고 있습니다.
 const fetchPet = async () => {
-  let url = new URL(`https://openapi.seoul.go.kr:8088/${API_KEY}/json/${ANI_VIEW}/1/100/`);
+  let url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/${ANI_VIEW}/1/100/`);
   //   console.log('fetchPet URL', url);
   const response = await fetch(url);
   const dataInfo = await response.json();
@@ -24,7 +24,7 @@ const fetchPet = async () => {
 };
 
 const fetchImg = async (num) => {
-  let url = new URL(`https://openapi.seoul.go.kr:8088/${API_KEY}/json/${IMG_VIEW}/1/100/`);
+  let url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/${IMG_VIEW}/1/100/`);
   //   console.log('fetchImg URL', url);
   const response = await fetch(url);
   const dataImg = await response.json();
