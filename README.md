@@ -1,6 +1,6 @@
 <!-- @format -->
 
-# FIGMA DESIGN CLONE CODING! :muscle:
+# 공공API 활용 CODING! :muscle:
 
 ![이미지](./img/banner.png)
 
