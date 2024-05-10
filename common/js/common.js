@@ -16,7 +16,7 @@ var swiper = new Swiper('.videoArea', {
 
 // 두개의 API를 활용하고 있습니다.
 const fetchPet = async () => {
-  let url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/${ANI_VIEW}/1/100/`);
+  let url = new URL(`https://openapi.seoul.go.kr:8088/${API_KEY}/json/${ANI_VIEW}/1/100/`);
   //   console.log('fetchPet URL', url);
   const response = await fetch(url);
   const dataInfo = await response.json();
@@ -24,7 +24,7 @@ const fetchPet = async () => {
 };
 
 const fetchImg = async (num) => {
-  let url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/${IMG_VIEW}/1/100/`);
+  let url = new URL(`https://openapi.seoul.go.kr:8088/${API_KEY}/json/${IMG_VIEW}/1/100/`);
   //   console.log('fetchImg URL', url);
   const response = await fetch(url);
   const dataImg = await response.json();
@@ -55,8 +55,10 @@ const reanderList = (dataInfo, dataImg) => {
 // 리스트 내부의 하나의 아이템을 생성하는 함수입니다.
 // 이때 두개의 API에서 공통적으로 사용되는 ANIMAL_NO를 사용하여 이미지를 매칭합니다.
 function createHtml(pet, dataImg) {
-  let gender = pet.SEXDSTN === 'M' ? "<i class='fa-solid fa-mars'></i>" : "<i class='fa-solid fa-venus'></i>";
-  let spcs = pet.SPCS === 'DOG' ? "<i class='fa-solid fa-dog'></i>" : "<i class='fa-solid fa-cat'></i>";
+  let gender =
+    pet.SEXDSTN === 'M' ? "<i class='fa-solid fa-mars'></i>" : "<i class='fa-solid fa-venus'></i>";
+  let spcs =
+    pet.SPCS === 'DOG' ? "<i class='fa-solid fa-dog'></i>" : "<i class='fa-solid fa-cat'></i>";
   let adp = pet.ADP_STTUS === 'P' ? 'petState on' : 'petState';
 
   let img = dataImg.filter((no) => no.ANIMAL_NO === pet.ANIMAL_NO && no.PHOTO_KND === 'THUMB');
